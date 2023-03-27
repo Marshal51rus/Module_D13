@@ -21,7 +21,7 @@ docker run -d -p 6379:6379 redis
 ## Комманды для запуска:
 celery -A myproject1 worker -l INFO<br>
 celery -A myproject1 beat -l INFO<br>
-celery -A proj flower --port=5555
+celery -A myproject1 flower --port=5555
 
 ### Внимание для запуска celery из под Windows обязательно ставим:
 pip install gevent<br>
