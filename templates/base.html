@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block head_title %}{% endblock head_title %}</title>
+    </head>
+    <body>
+
+        {% load cache %} <!-- Загружаем кэширование -->
+        {% cache 30 header %} <!-- Кэшируем отдельный блок на 30 секунд -->
+        {% block header %}
+        {% endblock header %}
+        {% endcache %}
+
+        {% block body %}
+        {% block content %}
+        {% endblock content %}
+        {% endblock body %}
+        {% block extra_body %}
+        {% endblock extra_body %}
+    </body>
+</html>

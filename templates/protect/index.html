@@ -1,0 +1,24 @@
+{% extends "news.html" %}
+
+{% block content %}
+<h2>Страница авторизованного пользователя {{request.user.username}}</h2>
+<hr>
+<div> Адрес вашей электронной почты {{ request.user.email }}</div>
+
+<div> Вы подписались на категорию {{ request.cat_name}}</div>
+
+{% if is_not_authors %}
+<button> <a href="news/upgrade/"> Стать автором </a> </button>
+{% else %}
+<div>
+<p>Вы являетесь автором!</p>
+<hr>
+</div>
+{% endif %}
+
+<button> <a href="news/logout/">Выйти</a> </button>
+<br>
+<br>
+<h2>Приватная страница с откликами на объявления</h2>
+<hr>
+{% endblock %}
